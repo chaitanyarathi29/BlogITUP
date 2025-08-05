@@ -25,6 +25,19 @@ import blog_icon from './blog_icon.png'
 import add_icon from './add_icon.png'
 import email_icon from './email_icon.png'
 import upload_area from './upload_area.png'
+import { StaticImageData } from 'next/image';
+
+export interface BlogType {
+  id: number;
+  title: string;
+  description: string;
+  image: StaticImageData;
+  date: number;
+  category: 'Technology' | 'Startup' | 'Lifestyle';
+  author: string;
+  author_img: StaticImageData;
+}
+
 
 export const assets = {
     facebook_icon,
@@ -40,7 +53,7 @@ export const assets = {
     upload_area
     }
 
-    export const blog_data = [{
+    export const blog_data: BlogType[] = [{
         id:1,
         title:"A detailed step by step guide to manage your lifestyle",
         description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the..",
